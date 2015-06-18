@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Picturefill - Demo</title>
+		<style>
+			img {
+				max-width: 100%
+			}
+		</style>
+		<script>
+			// Picture element HTML shim|v it for old IE (pairs with Picturefill.js)
+			document.createElement( "picture" );
+		</script>
+		<!--<script async="true" src="picturefill.js"></script>-->
+        <script async="true" src="picturefill-2.3.1.js"></script>
+	</head>
+	<body>
+		<h1>without picture</h1>
+		<img srcset="images/small.jpg, images/medium.jpg 2x" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+
+		<h1>with picture</h1>
+		<picture>
+			<img srcset="images/small.jpg, images/medium.jpg 2x" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+		</picture>
+
+		<h1>picture with art direction</h1>
+		<picture>
+			<!--[if IE 9]><video style="display: none;"><![endif]-->
+			<source srcset="images/large.jpg, images/extralarge.jpg 2x" media="(min-width: 400px)">
+			<!--[if IE 9]></video><![endif]-->
+			<img srcset="images/small.jpg, images/medium.jpg 2x" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+		</picture>
+	</body>
+</html>
